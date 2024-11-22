@@ -1,7 +1,4 @@
-language: node_js
-
-node_js:
-  - 13
+language: minimal
 
 services:
   - docker
@@ -11,7 +8,7 @@ jobs:
     - stage: Build and Push Images
       script:
         # Check Out Code
-        - git clone https://github.com/testwang2024/test.git
+        - git clone https://github.com/wanghongran2023/testRefactor.git
         - cd testRefactor
 
         # Build Docker Image
@@ -31,7 +28,7 @@ jobs:
       script:
 
         # Check Out Code
-        - git clone https://github.com/testwang2024/test.git && cd testRefactor
+        - git clone https://github.com/wanghongran2023/testRefactor.git && cd testRefactor
 
         # Configure Aws Cli
         - curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
@@ -74,3 +71,4 @@ jobs:
         #- kubectl apply -f frontend-service.yml
         - kubectl get pods
         - kubectl get svc
+
